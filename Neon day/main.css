@@ -1,0 +1,313 @@
+.flexCenter {
+  display: ms-grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.on .box {
+  margin: 10vh 7.5vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  min-width: 30vw;
+  max-width: 30vw;
+  float: left;
+  height: 45vh;
+  overflow-y: scroll;
+  border: solid 5px #ff0000;
+  border-radius: 10px;
+  padding: 25px;
+  -webkit-box-shadow: #ff0000 0 0 25px, inset #ff0000 0 0 25px;
+          box-shadow: #ff0000 0 0 25px, inset #ff0000 0 0 25px;
+}
+
+.on .box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.on .flexCenter:hover .box {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  opacity: .5;
+  -webkit-animation-name: scaleDown;
+          animation-name: scaleDown;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+.on .flexCenter:hover .box:hover {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  opacity: 1;
+  -webkit-animation-name: scaleUp;
+          animation-name: scaleUp;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+.on .text {
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #ff0000;
+  text-shadow: #ff0000 0 0 25px, #ff0000 0 0 50px;
+}
+
+.off .box {
+  margin: 10vh 7.5vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  min-width: 30vw;
+  max-width: 30vw;
+  float: left;
+  height: 45vh;
+  overflow-y: scroll;
+  border: solid 5px #201111;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.off .box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.off .text {
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #201111;
+}
+
+@-webkit-keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.35);
+    transform: scale(1.35);
+  }
+  100% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.35);
+    transform: scale(1.35);
+  }
+  100% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+}
+
+@-webkit-keyframes scaleDown {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
+.on #backToTop {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid #ff0000;
+  -webkit-box-shadow: #ff0000 0 0 25px, inset #ff0000 0 0 12.5px;
+          box-shadow: #ff0000 0 0 25px, inset #ff0000 0 0 12.5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 15px;
+  right: 48vw;
+  -webkit-transition: background-color .3s,  opacity .5s, visibility .5s;
+  transition: background-color .3s,  opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.on #backToTop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  text-shadow: #ff0000 0 0 12.5px, #ff0000 0 0 25px;
+  color: #ff0000;
+}
+
+.on #backToTop:hover {
+  cursor: pointer;
+  -webkit-animation-name: hover;
+          animation-name: hover;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#backToTop.noShow {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotateY(180deg);
+    transform: translateY(-20px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateY(360deg);
+    transform: translateY(0) rotateY(360deg);
+  }
+}
+
+@keyframes hover {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotateY(180deg);
+    transform: translateY(-20px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotateY(360deg);
+    transform: translateY(0) rotateY(360deg);
+  }
+}
+
+#centerButton {
+  z-index: 99999;
+  position: relative;
+  margin: auto;
+  resize: both;
+}
+
+#button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 74.5vh 0 0 -7.5vw;
+  border-radius: 15px;
+  height: 10vh;
+  width: 15vw;
+  cursor: pointer;
+  opacity: 1;
+  border: solid #050505 5px;
+  background-color: #070707;
+}
+
+#bText {
+  font-family: 'Bungee';
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 2vh;
+  font-size: 3rem;
+}
+
+.on {
+  background-color: #161111;
+  font-family: 'Clip';
+}
+
+.on::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+.on::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.on::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border: 2.5px solid #ff0000;
+  -webkit-box-shadow: #ff0000 0 0 15px, inset #ff0000 0 0 5px;
+          box-shadow: #ff0000 0 0 15px, inset #ff0000 0 0 5px;
+}
+
+.off {
+  background-color: #090909;
+  font-family: 'clip';
+}
+
+.off::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+.off::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.off::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border: 2.5px solid #201111;
+}
+/*# sourceMappingURL=main.css.map */

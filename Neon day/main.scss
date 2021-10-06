@@ -1,0 +1,74 @@
+@import "textBox";
+@import "backToTop";
+
+$neonOn: #ff0000;
+$neonOff: #201111;
+$transparent: rgba(0,0,0,0);
+
+#centerButton {
+    z-index: 99999;
+    position: relative;
+    margin: auto;
+    resize: both;
+}
+
+#button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 74.5vh 0 0 -7.5vw;
+    border-radius: 15px;
+    height: 10vh;
+    width: 15vw;
+    cursor: pointer;
+    opacity: 1;
+    border: solid #050505 5px;
+    background-color: #070707;
+}
+
+#bText {
+    font-family: 'Bungee';
+    text-align: center;
+    user-select: none;
+    line-height: 2vh;
+    font-size: 3rem;
+}
+
+.on{
+    background-color: #161111;
+    font-family: 'Clip';
+}
+
+.on::-webkit-scrollbar {
+    width: 0.5vw;
+}
+ 
+.on::-webkit-scrollbar-track {
+    background-color: $transparent;
+}
+ 
+.on::-webkit-scrollbar-thumb {
+    background-color: $transparent;
+    border-radius: 10px;
+    border: 2.5px solid $neonOn;
+    box-shadow: $neonOn 0 0 15px, inset $neonOn 0 0 5px;
+}
+
+.off{
+    background-color: #090909;
+    font-family: 'clip';
+}
+
+.off::-webkit-scrollbar {
+    width: 0.5vw;
+}
+ 
+.off::-webkit-scrollbar-track {
+    background-color: $transparent;
+}
+ 
+.off::-webkit-scrollbar-thumb {
+    background-color: $transparent;
+    border-radius: 10px;
+    border: 2.5px solid $neonOff;
+}
